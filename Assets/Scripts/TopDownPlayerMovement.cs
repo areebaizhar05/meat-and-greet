@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Tilemaps;
 #if ENABLE_INPUT_SYSTEM
 using UnityEngine.InputSystem;
 #endif
@@ -10,10 +11,36 @@ public sealed class TopDownPlayerMovement : MonoBehaviour
 {
     [SerializeField, Min(0f)] private float moveSpeed = 5f;
 
+    [Tooltip("The player's feet must stay on a tile of this tilemap. Defaults to the object named 'floor'.")]
+    [SerializeField] private Tilemap walkableArea;
+
+    [Tooltip("Extra gap kept between the feet and the floor edge, in world units.")]
+    [SerializeField, Min(0f)] private float edgePadding = 0.05f;
+
     private Rigidbody2D body;
+    private BoxCollider2D playerCollider;
     private Vector2 moveInput;
 
+    public static TopDownPlayerMovement Active { get; private set; }
     public Vector2 MoveInput => moveInput;
+
+    /// <summary>Bottom-centre of the feet collider. Props use this to decide draw order.</summary>
+    public Vector2 FeetPosition
+    {
+        get
+        {
+            var b = playerCollider.bounds;
+            return new Vector2(b.center.x, b.min.y);
+        }
+    }
+
+    private void OnEnable() => Active = this;
+
+    private void OnDisable()
+    {
+        if (Active == this)
+            Active = null;
+    }
 
     private void Awake()
     {
@@ -24,10 +51,23 @@ public sealed class TopDownPlayerMovement : MonoBehaviour
         body.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
         body.interpolation = RigidbodyInterpolation2D.Interpolate;
 
-        var playerCollider = GetComponent<BoxCollider2D>();
+        playerCollider = GetComponent<BoxCollider2D>();
         if (playerCollider == null)
             playerCollider = gameObject.AddComponent<BoxCollider2D>();
         FitColliderToFeet(playerCollider, GetCollisionSprites());
+
+        // Register the player with the depth sorter so it draws in front of or behind props.
+        var sortable = GetComponent<IsoSortable>();
+        if (sortable == null)
+            sortable = gameObject.AddComponent<IsoSortable>();
+        sortable.MarkMoving();
+
+        if (walkableArea == null)
+        {
+            var floor = GameObject.Find("floor");
+            if (floor != null)
+                walkableArea = floor.GetComponent<Tilemap>();
+        }
     }
 
     private void FitColliderToFeet(BoxCollider2D playerCollider, SpriteRenderer[] renderers)
@@ -108,7 +148,45 @@ public sealed class TopDownPlayerMovement : MonoBehaviour
         Vector2 gridDirection = new Vector2(screenDirection.x, screenDirection.y);
         if (gridDirection.sqrMagnitude > 0f)
             gridDirection.Normalize();
-        body.MovePosition(body.position + gridDirection * moveSpeed * Time.fixedDeltaTime);
+
+        Vector2 step = gridDirection * moveSpeed * Time.fixedDeltaTime;
+
+        // Stay on the floor. If the full step leaves it, try sliding along one axis.
+        if (!CanStandAfter(step))
+        {
+            if (CanStandAfter(new Vector2(step.x, 0f)))
+                step = new Vector2(step.x, 0f);
+            else if (CanStandAfter(new Vector2(0f, step.y)))
+                step = new Vector2(0f, step.y);
+            else
+                step = Vector2.zero;
+        }
+
+        // Velocity (not MovePosition) lets the physics solver stop us at colliders.
+        body.linearVelocity = step / Time.fixedDeltaTime;
+    }
+
+    private bool CanStandAfter(Vector2 offset)
+    {
+        if (walkableArea == null)
+            return true;
+
+        var b = playerCollider.bounds;
+        float minX = b.min.x - edgePadding + offset.x;
+        float maxX = b.max.x + edgePadding + offset.x;
+        float minY = b.min.y - edgePadding + offset.y;
+        float maxY = b.max.y + edgePadding + offset.y;
+
+        bool ok = OnFloor(minX, minY) && OnFloor(maxX, minY) && OnFloor(minX, maxY) && OnFloor(maxX, maxY);
+
+        // If we somehow start off the floor, don't trap the player there.
+        if (!ok && offset != Vector2.zero && !CanStandAfter(Vector2.zero))
+            return true;
+        return ok;
+    }
+
+    private bool OnFloor(float x, float y)
+    {
+        return walkableArea.HasTile(walkableArea.WorldToCell(new Vector3(x, y, 0f)));
     }
 }
-
