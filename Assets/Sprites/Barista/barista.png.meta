@@ -1,0 +1,431 @@
+fileFormatVersion: 2
+guid: 806f82d89fb05ee48867c21573cb8275
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6544481314982920413
+    second: nobg-fe48229e4bc1-1792880011783_1792880011783_1gsxj4pv_0
+  - first:
+      213: 1813343055492314454
+    second: nobg-fe48229e4bc1-1792880011783_1792880011783_1gsxj4pv_1
+  - first:
+      213: -8182808374841770259
+    second: nobg-fe48229e4bc1-1792880011783_1792880011783_1gsxj4pv_2
+  - first:
+      213: -5531618710597820637
+    second: nobg-fe48229e4bc1-1792880011783_1792880011783_1gsxj4pv_3
+  - first:
+      213: 5342601761532829804
+    second: nobg-fe48229e4bc1-1792880011783_1792880011783_1gsxj4pv_4
+  - first:
+      213: -841804353223770835
+    second: nobg-fe48229e4bc1-1792880011783_1792880011783_1gsxj4pv_5
+  - first:
+      213: -3104445139439880889
+    second: nobg-fe48229e4bc1-1792880011783_1792880011783_1gsxj4pv_6
+  - first:
+      213: -5360049962419451200
+    second: nobg-fe48229e4bc1-1792880011783_1792880011783_1gsxj4pv_7
+  - first:
+      213: -2378223047418481841
+    second: nobg-fe48229e4bc1-1792880011783_1792880011783_1gsxj4pv_8
+  - first:
+      213: -4035077757907063824
+    second: nobg-fe48229e4bc1-1792880011783_1792880011783_1gsxj4pv_9
+  - first:
+      213: 5290455739687848349
+    second: nobg-fe48229e4bc1-1792880011783_1792880011783_1gsxj4pv_10
+  - first:
+      213: 7333760561970604003
+    second: nobg-fe48229e4bc1-1792880011783_1792880011783_1gsxj4pv_11
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 256
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: barista_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 656
+        width: 231
+        height: 328
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c59e685411038641b32c469792a2305
+      internalID: 1415444219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: barista_1
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 656
+        width: 231
+        height: 328
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2c1967037b02a64285acccc39bc8585
+      internalID: 1894371220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: barista_2
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 656
+        width: 231
+        height: 328
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12a7c750f551ebe4ab7997111e224447
+      internalID: -1573152175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: barista_3
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 656
+        width: 231
+        height: 328
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85d0bf1ff6cf85d41a9d949c0164f15d
+      internalID: 1872340626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: barista_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 328
+        width: 231
+        height: 328
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03dc6379792bcf946a6161449bad4fe5
+      internalID: 1384402624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: barista_5
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 328
+        width: 231
+        height: 328
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e66321f369440ee428abf2849eeecb5e
+      internalID: 739080563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: barista_6
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 328
+        width: 231
+        height: 328
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dea26b835dfa8c243bb7b4825f6f7c2a
+      internalID: -1276131866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: barista_7
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 328
+        width: 231
+        height: 328
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88e80c3ceb135b8488bcd2af34e6ed9b
+      internalID: 1698895517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: barista_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 231
+        height: 328
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd8b1cd797cfb3f4aa492f12054ef778
+      internalID: 1458324536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: barista_9
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 0
+        width: 231
+        height: 328
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fea035c213ad4974c81d80ef8f5ed404
+      internalID: 221797462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: barista_10
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 0
+        width: 231
+        height: 328
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b478e91ab2ed0474e91ee98aac688ac3
+      internalID: 644750792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: barista_11
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 0
+        width: 231
+        height: 328
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae66c6b7b41b60445880e460393cdc1b
+      internalID: 849483203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 62b0d4f3b76766641a3b582e735628a2
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":3.0},"gridSpriteSize":{"x":231.0,"y":328.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      barista_0: 1415444219
+      barista_1: 1894371220
+      barista_10: 644750792
+      barista_11: 849483203
+      barista_2: -1573152175
+      barista_3: 1872340626
+      barista_4: 1384402624
+      barista_5: 739080563
+      barista_6: -1276131866
+      barista_7: 1698895517
+      barista_8: 1458324536
+      barista_9: 221797462
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
