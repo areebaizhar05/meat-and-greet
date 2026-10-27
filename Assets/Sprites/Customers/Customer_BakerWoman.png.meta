@@ -1,0 +1,429 @@
+fileFormatVersion: 2
+guid: d055bf383089c9c469c93458295b93a7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2205485717334629493
+    second: Customer_BakerWoman_0
+  - first:
+      213: 5912273160534320040
+    second: Customer_BakerWoman_1
+  - first:
+      213: 8225165149625759578
+    second: Customer_BakerWoman_2
+  - first:
+      213: -7057578403765031426
+    second: Customer_BakerWoman_3
+  - first:
+      213: 2033474905394316473
+    second: Customer_BakerWoman_4
+  - first:
+      213: -6249323997963512609
+    second: Customer_BakerWoman_5
+  - first:
+      213: 2969369865940189223
+    second: Customer_BakerWoman_6
+  - first:
+      213: 5779605954176392918
+    second: Customer_BakerWoman_7
+  - first:
+      213: -4953231058718258499
+    second: Customer_BakerWoman_8
+  - first:
+      213: -4707115491745556165
+    second: Customer_BakerWoman_9
+  - first:
+      213: -3197649704071595713
+    second: Customer_BakerWoman_10
+  - first:
+      213: 8262873980544797852
+    second: Customer_BakerWoman_11
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Customer_BakerWoman_0
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 193
+        width: 35
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57c9de223957b9e10800000000000000
+      internalID: 2205485717334629493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Customer_BakerWoman_1
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 193
+        width: 36
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a369bc6d1d9c0250800000000000000
+      internalID: 5912273160534320040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Customer_BakerWoman_2
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 193
+        width: 35
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a57bd52ff18a52270800000000000000
+      internalID: 8225165149625759578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Customer_BakerWoman_3
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 129
+        width: 36
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efded1d95d17e0e90800000000000000
+      internalID: -7057578403765031426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Customer_BakerWoman_4
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 129
+        width: 36
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b403b317aa583c10800000000000000
+      internalID: 2033474905394316473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Customer_BakerWoman_5
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 129
+        width: 36
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd49f072fe0f549a0800000000000000
+      internalID: -6249323997963512609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Customer_BakerWoman_6
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 65
+        width: 36
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7204d122922553920800000000000000
+      internalID: 2969369865940189223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Customer_BakerWoman_7
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 65
+        width: 36
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6de9a606ef8453050800000000000000
+      internalID: 5779605954176392918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Customer_BakerWoman_8
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 65
+        width: 37
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dba8aae6896924bb0800000000000000
+      internalID: -4953231058718258499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Customer_BakerWoman_9
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 1
+        width: 33
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3994cd4667fcaeb0800000000000000
+      internalID: -4707115491745556165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Customer_BakerWoman_10
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 1
+        width: 33
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f39fda8398aaf93d0800000000000000
+      internalID: -3197649704071595713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Customer_BakerWoman_11
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 1
+        width: 33
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9cc0325b10aba270800000000000000
+      internalID: 8262873980544797852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Customer_BakerWoman_0: 2205485717334629493
+      Customer_BakerWoman_1: 5912273160534320040
+      Customer_BakerWoman_10: -3197649704071595713
+      Customer_BakerWoman_11: 8262873980544797852
+      Customer_BakerWoman_2: 8225165149625759578
+      Customer_BakerWoman_3: -7057578403765031426
+      Customer_BakerWoman_4: 2033474905394316473
+      Customer_BakerWoman_5: -6249323997963512609
+      Customer_BakerWoman_6: 2969369865940189223
+      Customer_BakerWoman_7: 5779605954176392918
+      Customer_BakerWoman_8: -4953231058718258499
+      Customer_BakerWoman_9: -4707115491745556165
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
