@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// One customer. Walks from the door to its table, orders, waits, then walks out.
-// Leaves 5 seconds after being served, or after 15 seconds if nobody serves it.
-// The look comes from a 3x4 sprite sheet (48x64 frames). Rows: front, left, right, back.
+//one customer. Walks from the door to its table, orders, waits, then walks out.
+//leaves 5 seconds after being served, or after 15 seconds if nobody serves it.
+//the look comes from a 3x4 sprite sheet (48x64 frames). Rows: front, left, right, back.
 public class CafeCustomer : MonoBehaviour, Interactable
 {
     public enum State { Entering, Seated, Leaving }

@@ -1,9 +1,9 @@
 using UnityEngine;
 
-// Put this on the service counter. Press E near it to pick up a plate.
+//put this on the service counter. Press E near it to pick up a plate.
 public class PlateCounter : MonoBehaviour, Interactable
 {
-    // Only works when the player's hands are empty (one plate at a time).
+    //only works when the player's hands are empty (one plate at a time).
     public bool CanInteract(PlayerInteractor player)
     {
         return !player.holdingPlate;

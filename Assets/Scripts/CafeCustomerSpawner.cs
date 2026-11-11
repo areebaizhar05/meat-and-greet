@@ -2,23 +2,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-// Sits at the entrance. Spawns customers, but only at clean tables.
-// Table life: Clean -> Occupied -> Dirty (only if the customer was served) -> Clean (player presses Q).
+//sits at the entrance. Spawns customers, but only at clean tables.
+//table life: Clean -> Occupied -> Dirty (only if the customer was served) -> Clean (player presses Q).
 public class CafeCustomerSpawner : MonoBehaviour
 {
     public enum TableState { Clean, Occupied, Dirty }
 
     public CafeCustomer customerPrefab;
-    public CafeCustomer anomalyPrefab;   // the Anomaly prefab (leave empty = no anomalies)
-    public Texture2D[] customerSheets;   // random look for each customer
-    public Transform[] seats;            // one empty object per stool
-    public Tilemap floor;                // leave empty to use the object named "floor"
+    public CafeCustomer anomalyPrefab;   //the Anomaly prefab
+    public Texture2D[] customerSheets;   //random look for each customer
+    public Transform[] seats;            //one empty object per stool
+    public Tilemap floor;               
 
-    public float firstDelay = 1f;
-    public float minGap = 2f;            // seconds between customers
+    public float firstDelay = 1f; //delay before 1st cusotmer spawn
+    public float minGap = 2f;           //buffer time in seconds between customers
     public float maxGap = 5f;
     public Vector2 feetClearance = new Vector2(0.6f, 0.3f);
-    public int firstAnomalyMax = 5;      // first anomaly is customer number 1 to this
+    public int firstAnomalyMax = 5;      //first anomaly is customer number 1 to this
 
     CafeNavGrid grid;
     TableState[] tables;
@@ -32,12 +32,12 @@ public class CafeCustomerSpawner : MonoBehaviour
             floor = GameObject.Find("floor").GetComponent<Tilemap>();
         grid = new CafeNavGrid(floor, feetClearance);
 
-        // Every table starts clean.
+        //every table starts clean.
         tables = new TableState[seats.Length];
         for (int i = 0; i < tables.Length; i++)
             tables[i] = TableState.Clean;
 
-        OrderManager.Clear();
+        OrderManager.Clear(); //empty order list
         Debug.Log("[Table] All " + tables.Length + " tables are clean");
         timer = firstDelay;
 
@@ -53,7 +53,7 @@ public class CafeCustomerSpawner : MonoBehaviour
         int table = PickCleanTable();
         if (table == -1)
         {
-            timer = 0.5f;   // no clean table, check again soon
+            timer = 0.5f;   //no clean table, check again soon
             return;
         }
 
@@ -61,7 +61,7 @@ public class CafeCustomerSpawner : MonoBehaviour
         timer = Random.Range(minGap, maxGap);
     }
 
-    // Returns a random clean table, or -1 if there is none.
+    //returns a random clean table, or -1 if there is none.
     int PickCleanTable()
     {
         List<int> cleanTables = new List<int>();
@@ -80,12 +80,12 @@ public class CafeCustomerSpawner : MonoBehaviour
         customersSpawned++;
         bool anomaly = anomalyPrefab != null && customersSpawned == nextAnomalyAt;
 
-        Texture2D look = null;     // anomalies don't need a sheet, their Animator does the look
+        Texture2D look = null;     //anomalies dont need a sheet, their Animator does the look lwk
         CafeCustomer customer;
         if (anomaly)
         {
             customer = Instantiate(anomalyPrefab, transform.position, Quaternion.identity);
-            nextAnomalyAt = customersSpawned + Random.Range(3, 7);   // next one in 3 to 6 customers
+            nextAnomalyAt = customersSpawned + Random.Range(3, 7);   //next one in 3 to 6 customers
             Debug.Log("[Spawner] Anomaly arrived (customer #" + customersSpawned + ")");
         }
         else
@@ -97,11 +97,11 @@ public class CafeCustomerSpawner : MonoBehaviour
         customer.Init(this, grid, look, table, seats[table].position, transform.position);
     }
 
-    // Called by a customer when it gets up to leave.
+    //called by a customer when it gets up to leave.
     public void CustomerLeft(int table, bool wasServed)
     {
         TableVisuals visuals = TableVisuals.Get(table);
-        visuals?.SetPlate(false);   // the plate goes away when the customer gets up
+        visuals?.SetPlate(false);   //the plate goes away when the customer gets up
 
         if (wasServed)
         {
@@ -117,14 +117,14 @@ public class CafeCustomerSpawner : MonoBehaviour
         }
     }
 
-    // Called by the player on Q. Cleans the first dirty table in range.
+    //called by the player on Q. Cleans the first dirty table in range.
     public bool CleanTableNear(Vector2 playerPosition, float range)
     {
         for (int i = 0; i < tables.Length; i++)
         {
             if (tables[i] != TableState.Dirty) continue;
 
-            // Use the table's visual position if it has one, otherwise the seat.
+            //use the table's visual position if it has one, otherwise the seat.
             TableVisuals visuals = TableVisuals.Get(i);
             Vector2 anchor = visuals != null ? (Vector2)visuals.transform.position : (Vector2)seats[i].position;
 
@@ -139,7 +139,7 @@ public class CafeCustomerSpawner : MonoBehaviour
         return false;
     }
 
-    // Green circle = entrance, cyan circles = seats (Scene view only).
+    //green circle = entrance, cyan circles = seats (only in the scene view)
     void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
