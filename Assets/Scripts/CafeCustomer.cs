@@ -262,6 +262,7 @@ public class CafeCustomer : MonoBehaviour, Interactable
 
         player.holdingPlate = false;
         OrderManager.MarkServed(order);
+        TableVisuals.Get(table)?.SetPlate(true);
         timer = eatSeconds;   // now leave in 5 seconds
     }
 }
