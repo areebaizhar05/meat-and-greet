@@ -2,12 +2,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-/// <summary>
-/// For long diagonal props (counters, partition walls). The prop always sits at order -1.
-/// When the player's feet are behind a prop that overlaps the player on screen,
-/// the player drops to -2 so it draws behind that prop. Nothing else is affected.
-/// Needs a Sorting Group on the Player root.
-/// </summary>
+
+//long counters and walls are always one layer behind everyone.
+//When player walk behind one, the script pushes us one layer further back,
+//so the counter covers the player and when we walk away, we go back to normal
+
 [RequireComponent(typeof(SortingGroup))]
 public sealed class LongPropSorting : MonoBehaviour
 {
@@ -21,7 +20,7 @@ public sealed class LongPropSorting : MonoBehaviour
     {
         GetComponent<SortingGroup>().sortingOrder = -1;
 
-        // The area the prop covers on screen.
+        //the area the prop covers on screen.
         bool any = false;
         foreach (var sr in GetComponentsInChildren<SpriteRenderer>())
         {
@@ -29,7 +28,7 @@ public sealed class LongPropSorting : MonoBehaviour
             else screenBounds.Encapsulate(sr.bounds);
         }
 
-        // The two footprint corners furthest apart give the prop's long direction.
+        //the two footprint corners furthest apart give the prop's long direction.
         var corners = new List<Vector2>();
         foreach (var poly in GetComponentsInChildren<PolygonCollider2D>())
             foreach (var p in poly.points)
@@ -49,7 +48,7 @@ public sealed class LongPropSorting : MonoBehaviour
 
     private void LateUpdate()
     {
-        // Every prop runs this, but only the first one each frame does the work.
+        //every prop runs this, but only the first one each frame does the work.
         if (handledFrame == Time.frameCount) return;
         handledFrame = Time.frameCount;
 
@@ -78,7 +77,7 @@ public sealed class LongPropSorting : MonoBehaviour
     private bool IsBehind(Vector2 feet)
     {
         Vector2 along = lineEnd - lineStart;
-        // Same sign = the feet are on the back side of the footprint line.
+        //same sign = the feet are on the back side of the footprint line.
         return Cross(along, feet - lineStart) * Cross(along, Vector2.up) > 0f;
     }
 

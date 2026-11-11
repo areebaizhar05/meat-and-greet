@@ -2,11 +2,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-/// <summary>
-/// Walkable grid built from the floor tilemap. A cell is walkable when it has a floor tile,
-/// the feet box around its centre stays on the floor, and no furniture collider overlaps it.
-/// Customers use FindPath to walk around furniture instead of through it.
-/// </summary>
+
+//get the walkable cells from the floor tilemap
+//the feet box around its centre stays on the floor, and no furniture collider overlaps it.
+//used to find a path for customers around furniture
+
 public sealed class CafeNavGrid
 {
     private readonly Tilemap floor;
@@ -28,7 +28,7 @@ public sealed class CafeNavGrid
         Rebuild();
     }
 
-    /// <summary>Call again if furniture moves.</summary>
+    //update the grid if furniture is moved
     public void Rebuild()
     {
         walkable.Clear();
@@ -48,7 +48,7 @@ public sealed class CafeNavGrid
 
         foreach (var hit in Physics2D.OverlapBoxAll(feet, clearance, 0f))
         {
-            // Only furniture blocks: solid colliders with no Rigidbody2D (the player has one).
+            //only furniture blocks such that the solid colliders with no Rigidbody2D is used (the player has one).
             if (hit != null && !hit.isTrigger && hit.attachedRigidbody == null)
                 return false;
         }
@@ -64,7 +64,7 @@ public sealed class CafeNavGrid
         return c;
     }
 
-    /// <summary>The walkable cell closest to a world point.</summary>
+    //finds the nearest cell the customer can walk on
     public bool NearestWalkable(Vector3 world, out Vector3Int best)
     {
         var start = floor.WorldToCell(world);
@@ -86,7 +86,7 @@ public sealed class CafeNavGrid
         return false;
     }
 
-    /// <summary>A* from one world point to another. Returns world-space waypoints, or null.</summary>
+    //finds a path using A*, returns null if no path is found
     public List<Vector3> FindPath(Vector3 from, Vector3 to)
     {
         if (!NearestWalkable(from, out var start) || !NearestWalkable(to, out var goal))
@@ -115,7 +115,7 @@ public sealed class CafeNavGrid
                 var next = current + step;
                 if (closed.Contains(next) || !walkable.Contains(next)) continue;
 
-                // No cutting corners past furniture on diagonal steps.
+                //checks diagonals so customers don't pass through corners
                 if (step.x != 0 && step.y != 0 &&
                     (!walkable.Contains(current + new Vector3Int(step.x, 0, 0)) ||
                      !walkable.Contains(current + new Vector3Int(0, step.y, 0))))

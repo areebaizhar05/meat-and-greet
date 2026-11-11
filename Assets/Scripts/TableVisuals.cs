@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// One per table. tableIndex must match the table number the spawner uses (0 = Table 1).
+//one per table. tableIndex must match the table number the spawner uses (0 = Table 1).
 public class TableVisuals : MonoBehaviour
 {
     public int tableIndex;
@@ -26,6 +26,6 @@ public class TableVisuals : MonoBehaviour
         return null;
     }
 
-    public void SetPlate(bool on) { if (plateVisual) plateVisual.SetActive(on); }
-    public void SetDirty(bool on) { if (dirtyVisual) dirtyVisual.SetActive(on); }
+    public void SetPlate(bool on) { if (plateVisual) plateVisual.SetActive(on); } //show or hide the plate
+    public void SetDirty(bool on) { if (dirtyVisual) dirtyVisual.SetActive(on); } //show  or hide the dirty cash
 }
