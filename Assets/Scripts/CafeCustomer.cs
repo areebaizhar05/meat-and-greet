@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //one customer. Walks from the door to its table, orders, waits, then walks out.
-//leaves 5 seconds after being served, or after 15 seconds if nobody serves it.
+//leaves 5 seconds after being served, or after 20 seconds if nobody serves it.
 //the look comes from a 3x4 sprite sheet (48x64 frames). Rows: front, left, right, back.
 public class CafeCustomer : MonoBehaviour, Interactable
 {
@@ -10,11 +10,12 @@ public class CafeCustomer : MonoBehaviour, Interactable
 
     public float walkSpeed = 2.5f;
     public float framesPerSecond = 6f;
-    public float waitSeconds = 15f;   //if unserved, leeaves after 15 secs
+    public float waitSeconds = 20f;   //if unserved, leeaves after 20 secs
     public float eatSeconds = 5f;     //if served, eats and leeave after 5 secs
 
     //Anomaly settings for its prefab!
     public bool isAnomaly;               //is yes if anomaly prefab
+    bool strikeGiven;   //so one anomaly only ever gives one strike
     public MeatPickup meatPrefab;        //meat drop when anomaly killed
     public int meatCount = 3;            //3 meat pieces drop when anomaly killed
     public float walkAnimSpeed = 0.5f;   //animator speed while walking (1 = 12 frames per second)
@@ -128,7 +129,7 @@ public class CafeCustomer : MonoBehaviour, Interactable
                 state = State.Seated;
                 facing = Front;
                 timer = waitSeconds;
-                Debug.Log("[Customer] Seated at table " + (table + 1) + ", waiting for a " + OrderManager.Dish);
+                //Debug.Log("[Customer] Seated at table " + (table + 1) + ", waiting for a " + OrderManager.Dish);
             }
         }
         else if (state == State.Seated)
@@ -148,6 +149,12 @@ public class CafeCustomer : MonoBehaviour, Interactable
 
     void Leave()
     {
+        //an anomaly walked out alive (and wasn't already a strike for being served)
+        if (isAnomaly && !strikeGiven)
+        {
+            strikeGiven = true;
+            FindFirstObjectByType<PlayerInteractor>()?.AddStrike("It was in an unnoticed...");
+        }
         state = State.Leaving;
         OrderManager.Remove(order);
         spawner.CustomerLeft(table, order.served);   //dirty if served, clean if not
@@ -231,7 +238,8 @@ public class CafeCustomer : MonoBehaviour, Interactable
             return;
         }
 
-        Debug.Log("Phew! Anomaly killed at table " + (table + 1));
+        //Debug.Log("Phew! Anomaly killed at table " + (table + 1));
+        Debug.Log("Phew, close call!");
 
         if (meatPrefab != null)
         {
@@ -256,7 +264,7 @@ public class CafeCustomer : MonoBehaviour, Interactable
     {
         if (!player.holdingPlate)
         {
-            Debug.Log("[Order] Table " + (table + 1) + " wants a " + OrderManager.Dish + ". Pick one up at the counter (E).");
+            //Debug.Log("[Order] Table " + (table + 1) + " wants a " + OrderManager.Dish + ". Pick one up at the counter (E).");
             return;
         }
 
@@ -264,5 +272,12 @@ public class CafeCustomer : MonoBehaviour, Interactable
         OrderManager.MarkServed(order);
         TableVisuals.Get(table)?.SetPlate(true);
         timer = eatSeconds;   // now leave in 5 seconds
+
+        //served an anomaly by accident
+        if (isAnomaly)
+        {
+            strikeGiven = true;
+            player.AddStrike("You shouldn't have served it");
+        }
     }
 }

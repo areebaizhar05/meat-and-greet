@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement; // addign this for game voer concept for now 
 // Q = clean the closest dirty table.
 // F = kill aN ANOMALY OR CUSTOMER 
 // R = restart after game over
+//3 strikes (kill customer / serve anomaly / anomaly escapes) = game over, R to restart
 public class PlayerInteractor : MonoBehaviour
 {
     public float radius = 1.2f;
@@ -17,9 +18,9 @@ public class PlayerInteractor : MonoBehaviour
     public GameObject heldPlateVisual;
 
 
-    //game over: kill this many normal customers and the game freezes.
-    public int maxKills = 3; //max kill limit -3
-    int customersKilled;
+    //game over: mutliple conditions leads to total 3 strikes and causes game over
+    public int maxStrikes = 3;   //3 mistakes = game over
+    int strikes;
     bool gameOver;
     //-----
 
@@ -80,24 +81,40 @@ public class PlayerInteractor : MonoBehaviour
                 bool wasNormalCustomer = !customer.isAnomaly;
                 customer.Kill();
 
-                if (wasNormalCustomer)
-                {
-                    customersKilled++;
-                    Debug.Log("[Risk] Customers killed: " + customersKilled + "/" + maxKills);
+                //if (wasNormalCustomer)
+                //{
+                //    customersKilled++;
+                //    Debug.Log("[Risk] Customers killed: " + customersKilled + "/" + maxKills);
 
-                    if (customersKilled >= maxKills)
-                    {
-                        gameOver = true;
-                        Time.timeScale = 0f;   // freeze the game
-                        Debug.Log("GAME OVER! You killed " + customersKilled + " customers. Press R to restart.");
-                    }
-                }
+                //    if (customersKilled >= maxKills)
+                //    {
+                //        gameOver = true;
+                //        Time.timeScale = 0f;   // freeze the game
+                //        Debug.Log("GAME OVER! You killed " + customersKilled + " customers. Press R to restart.");
+                //    }
+                //}
+                if (wasNormalCustomer)
+                    AddStrike("Killed a customer"); // now part of the strike category 
                 return;
             }
         }
         Debug.Log("[ACTION: KILL] Nobody nearby"); //changed the message to not specific to anomaly but general killing
     }
 
+    //a mistake: killed a customer, served an anomaly, or let an anomaly leave.
+    public void AddStrike(string reason)
+    {
+        if (gameOver) return;
+        strikes++;
+        Debug.Log("[Strike] " + reason + " (" + strikes + "/" + maxStrikes + ")");
+
+        if (strikes >= maxStrikes)
+        {
+            gameOver = true;
+            Time.timeScale = 0f;   //freeze the game
+            Debug.Log("GAME OVER! 3 strikes. Press R to restart.");
+        }
+    }
     void PressQ()
     {
         bool cleaned = spawner != null && spawner.CleanTableNear(transform.position, radius);

@@ -38,7 +38,7 @@ public class CafeCustomerSpawner : MonoBehaviour
             tables[i] = TableState.Clean;
 
         OrderManager.Clear(); //empty order list
-        Debug.Log("[Table] All " + tables.Length + " tables are clean");
+        //Debug.Log("[Table] All " + tables.Length + " tables are clean");
         timer = firstDelay;
 
         customersSpawned = 0;
@@ -85,8 +85,10 @@ public class CafeCustomerSpawner : MonoBehaviour
         if (anomaly)
         {
             customer = Instantiate(anomalyPrefab, transform.position, Quaternion.identity);
+            Debug.Log("Customer In!!");
             nextAnomalyAt = customersSpawned + Random.Range(3, 7);   //next one in 3 to 6 customers
-            Debug.Log("[Spawner] Anomaly arrived (customer #" + customersSpawned + ")");
+            //Debug.Log("[Spawner] Anomaly arrived (customer #" + customersSpawned + ")");
+            Debug.Log("Customer In??"); // for playtesting funny
         }
         else
         {
@@ -113,7 +115,7 @@ public class CafeCustomerSpawner : MonoBehaviour
         {
             tables[table] = TableState.Clean;
             visuals?.SetDirty(false);
-            Debug.Log("[Table] Table " + (table + 1) + " is free (customer was not served)");
+            //Debug.Log("[Table] Table " + (table + 1) + " is free (customer was not served)");
         }
     }
 
@@ -132,7 +134,7 @@ public class CafeCustomerSpawner : MonoBehaviour
             {
                 tables[i] = TableState.Clean;
                 visuals?.SetDirty(false);
-                Debug.Log("[Table] Table " + (i + 1) + " cleaned");
+                //Debug.Log("[Table] Table " + (i + 1) + " cleaned");
                 return true;
             }
         }

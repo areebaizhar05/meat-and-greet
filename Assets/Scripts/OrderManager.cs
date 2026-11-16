@@ -32,7 +32,7 @@ public static class OrderManager
         nextId++;
 
         activeOrders.Add(order);
-        Debug.Log("[Order] New order #" + order.id + " (" + Dish + ") for table " + (table + 1));
+        //Debug.Log("[Order] New order #" + order.id + " (" + Dish + ") for table " + (table + 1));
         PrintList();
         return order;
     }
@@ -41,7 +41,7 @@ public static class OrderManager
     public static void MarkServed(Order order)
     {
         order.served = true;
-        Debug.Log("[Order] Order #" + order.id + " served");
+        //Debug.Log("[Order] Order #" + order.id + " served");
         PrintList();
     }
 
@@ -49,7 +49,7 @@ public static class OrderManager
     public static void Remove(Order order)
     {
         activeOrders.Remove(order);
-        Debug.Log("[Order] Order #" + order.id + " closed");
+        //Debug.Log("[Order] Order #" + order.id + " closed");
         PrintList();
     }
 
@@ -66,6 +66,6 @@ public static class OrderManager
                 text += "\n  #" + o.id + " table " + (o.table + 1);
             }
         }
-        Debug.Log("Orders unserved: " + unserved + text);
+        //Debug.Log("Orders unserved: " + unserved + text);
     }
 }

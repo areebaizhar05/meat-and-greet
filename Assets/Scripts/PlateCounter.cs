@@ -12,6 +12,6 @@ public class PlateCounter : MonoBehaviour, Interactable
     public void Interact(PlayerInteractor player)
     {
         player.holdingPlate = true;
-        Debug.Log("[Player] Picked up a " + OrderManager.Dish);
+        //Debug.Log("[Player] Picked up a " + OrderManager.Dish);
     }
 }
