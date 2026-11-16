@@ -153,7 +153,7 @@ public class CafeCustomer : MonoBehaviour, Interactable
         if (isAnomaly && !strikeGiven)
         {
             strikeGiven = true;
-            FindFirstObjectByType<PlayerInteractor>()?.AddStrike("It was in an unnoticed...");
+            FindFirstObjectByType<PlayerInteractor>()?.AddStrike("Anomaly slipped away...");
         }
         state = State.Leaving;
         OrderManager.Remove(order);
