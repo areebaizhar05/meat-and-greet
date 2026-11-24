@@ -30,6 +30,7 @@ public class PlayerInteractor : MonoBehaviour
     void Start()
     {
         spawner = FindFirstObjectByType<CafeCustomerSpawner>();
+        GameAnalytics.RoundStarted();
     }
 
     void Update()
@@ -113,6 +114,8 @@ public class PlayerInteractor : MonoBehaviour
             gameOver = true;
             Time.timeScale = 0f;   //freeze the game
             Debug.Log("GAME OVER! 3 strikes. Press R to restart.");
+            //GameAnalytics.Record("gameOver", "3 strikes", strikes);
+            //GameAnalytics.Flush();
         }
     }
     void PressQ()
