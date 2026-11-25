@@ -41,6 +41,7 @@ public static class OrderManager
     public static void MarkServed(Order order)
     {
         order.served = true;
+        GameAnalytics.Record("orderServed", "table", order.table + 1);
         //Debug.Log("[Order] Order #" + order.id + " served");
         PrintList();
     }

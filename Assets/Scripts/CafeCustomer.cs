@@ -234,12 +234,14 @@ public class CafeCustomer : MonoBehaviour, Interactable
         if (!isAnomaly)
         {
             Debug.Log("FAULTY! CUSTOMER KILLED :(");
+            GameAnalytics.Record("customerKilled", "table", table + 1);
             Destroy(gameObject);
             return;
         }
 
         //Debug.Log("Phew! Anomaly killed at table " + (table + 1));
         Debug.Log("Phew, close call!");
+        GameAnalytics.Record("anomalyKilled", "table", table + 1);
 
         if (meatPrefab != null)
         {

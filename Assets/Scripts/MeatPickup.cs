@@ -73,5 +73,6 @@ public class MeatPickup : MonoBehaviour
             Destroy(piece.gameObject);
         }
         //Debug.Log("+" + count + " meat collected");
+        GameAnalytics.Record("meatCollected", "count", count);
     }
 }

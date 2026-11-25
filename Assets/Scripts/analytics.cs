@@ -47,6 +47,13 @@ public class GameAnalytics : MonoBehaviour
         AnalyticsService.Instance.RecordEvent(e);
     }
 
+    public static void Record(string eventName, string param, string value)
+    {
+        CustomEvent e = new CustomEvent(eventName) { { param, value } };
+        if (!ready) { pending.Add(e); return; }
+        AnalyticsService.Instance.RecordEvent(e);
+    }
+
     public static void Flush()
     {
         if (ready) AnalyticsService.Instance.Flush();

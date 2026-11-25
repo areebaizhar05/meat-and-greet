@@ -108,14 +108,15 @@ public class PlayerInteractor : MonoBehaviour
         if (gameOver) return;
         strikes++;
         Debug.Log("[Strike] " + reason + " (" + strikes + "/" + maxStrikes + ")");
+        GameAnalytics.Record("strikeAdded", "reason", reason);
 
         if (strikes >= maxStrikes)
         {
             gameOver = true;
             Time.timeScale = 0f;   //freeze the game
             Debug.Log("GAME OVER! 3 strikes. Press R to restart.");
-            //GameAnalytics.Record("gameOver", "3 strikes", strikes);
-            //GameAnalytics.Flush();
+            GameAnalytics.Record("gameOver", "strikes", strikes);
+            GameAnalytics.Flush();
         }
     }
     void PressQ()
